@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import 'package:lightwork/utils/brand_colors.dart';
 import 'package:lightwork/utils/chart.dart';
+import 'package:lightwork/utils/profile_tile.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -43,90 +44,8 @@ class _HomeScreenState extends State<HomeScreen> {
             SizedBox(
               height: size.height / 50,
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Row(
-                children: [
-                  SizedBox(
-                    width: size.width / 40,
-                  ),
-                  Stack(
-                    clipBehavior: Clip.none,
-                    children: [
-                      const CircleAvatar(
-                        radius: 40,
-                        backgroundImage: AssetImage('assets/images/person.png'),
-                      ),
-                      Positioned(
-                        right: 5,
-                        bottom: 0,
-                        child: Container(
-                          width: 15,
-                          height: 15,
-                          decoration: BoxDecoration(
-                            color: BrandColors.primaryColor,
-                            borderRadius: BorderRadius.circular(50),
-                            border: Border.all(color: Colors.white, width: 2),
-                          ),
-                        ),
-                      ),
-                      Positioned(
-                        left: -10,
-                        top: 0,
-                        child: Container(
-                          // width: 15,
-                          // height: 15,
-                          padding: const EdgeInsets.all(8),
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(50),
-                          ),
-                          child: Image.asset(
-                            'assets/images/edit.png',
-                            color: BrandColors.primaryColor,
-                            width: 12,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    width: size.width / 40,
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text(
-                        'Hello James',
-                        style: TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                      Row(
-                        children: [
-                          Image.asset(
-                            'assets/images/loc1.png',
-                            width: 20,
-                          ),
-                          const SizedBox(
-                            width: 4,
-                          ),
-                          const Text(
-                            'Cambridge, United Kingdom',
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w400,
-                              color: Color.fromRGBO(70, 70, 70, 1),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
+            // profile tile in home page
+            profileTile(size),
             SizedBox(
               height: size.height / 20,
             ),
@@ -141,12 +60,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   child: Column(
                     children: [
+                      // to maintain space from job card
                       SizedBox(
                         height: size.height / 8,
                       ),
                       SizedBox(
                         height: size.height / 40,
                       ),
+                      // home page container 3 heading
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 16),
                         child: Column(
@@ -172,6 +93,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ),
                               ],
                             ),
+                            // container 3 sub part
                             Padding(
                               padding: const EdgeInsets.symmetric(vertical: 4),
                               child: Row(
@@ -213,6 +135,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ],
                               ),
                             ),
+                            // container 3 card with swipe animation
                             SizedBox(
                               height: 170,
                               child: CardSwiper(
@@ -251,6 +174,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         ),
                                         child: Row(
                                           children: [
+                                            // card image
                                             Container(
                                               width: size.width / 3.5,
                                               height: size.width / 3.5,
@@ -284,6 +208,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                           MainAxisAlignment
                                                               .center,
                                                       children: [
+                                                        // card title
                                                         Text(
                                                           'Sink Repair',
                                                           style: TextStyle(
@@ -298,6 +223,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                                     1),
                                                           ),
                                                         ),
+                                                        // card contactor name
                                                         Text(
                                                           'Contractor: Name',
                                                           style: TextStyle(
@@ -312,6 +238,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                                     1),
                                                           ),
                                                         ),
+                                                        // card address part
                                                         Text(
                                                           '10 Regent Street W17S',
                                                           style: TextStyle(
@@ -331,6 +258,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                     const SizedBox(
                                                       width: 16,
                                                     ),
+                                                    // card location icon
                                                     Container(
                                                       padding:
                                                           const EdgeInsets.all(
@@ -356,6 +284,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                 const SizedBox(
                                                   height: 8,
                                                 ),
+                                                // last part of card contains 2 buttons
                                                 Row(
                                                   children: [
                                                     Container(
@@ -423,6 +352,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           ],
                                         ),
                                       ),
+                                      // top right part of card
                                       Positioned(
                                         top: -10,
                                         right: 0,
@@ -452,6 +382,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             SizedBox(
                               height: size.height / 50,
                             ),
+                            // recent files heading
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
@@ -472,6 +403,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ),
                               ],
                             ),
+                            // recent files list
                             SizedBox(
                               height: size.height / 5,
                               child: Center(
@@ -501,6 +433,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
                                         children: [
+                                          // main image in recebt files tile
                                           Container(
                                             width: size.width / 4.5,
                                             height: size.width / 4.5,
@@ -521,8 +454,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                           const SizedBox(
                                             height: 8,
                                           ),
+
                                           Row(
                                             children: [
+                                              // icon of file
                                               Image.asset(
                                                 'assets/images/docs.png',
                                                 width: 20,
@@ -530,6 +465,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                               const SizedBox(
                                                 width: 2,
                                               ),
+                                              // name of file
                                               Text(
                                                 'Sink Repair...',
                                                 style: TextStyle(
@@ -548,6 +484,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             SizedBox(
                               height: size.height / 50,
                             ),
+                            // financial summary heading
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
@@ -586,7 +523,9 @@ class _HomeScreenState extends State<HomeScreen> {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.end,
                                 children: [
+                                  // chat of financial summary
                                   const Chart(),
+                                  // last part of container
                                   Container(
                                     margin: const EdgeInsets.only(
                                         right: 16, bottom: 8),
@@ -610,6 +549,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                 ),
+                // floating job card
                 Positioned(
                   top: -20,
                   width: size.width,

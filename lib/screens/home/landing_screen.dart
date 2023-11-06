@@ -24,100 +24,10 @@ class _LandingScreenState extends State<LandingScreen> {
   int curentIndex = 0;
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
+    // final size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: BrandColors.primaryColor1,
       body: pages[curentIndex],
-      // bottomNavigationBar: BottomNavigationBar(
-      //   elevation: 0,
-      //   currentIndex: curentIndex,
-      //   onTap: (value) {
-      //     setState(() {
-      //       curentIndex = value;
-      //     });
-      //   },
-      //   items: [
-      //     BottomNavigationBarItem(
-      //       icon: Icon(
-      //         Icons.home,
-      //         size: size.width / 16,
-      //         color: BrandColors.greyColor1,
-      //       ),
-      //       activeIcon: Icon(
-      //         Icons.home,
-      //         size: size.width / 16,
-      //         color: BrandColors.primaryColor,
-      //       ),
-      //       label: "",
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(
-      //         Icons.calendar_month,
-      //         size: size.width / 16,
-      //         color: BrandColors.greyColor1,
-      //       ),
-      //       activeIcon: Icon(
-      //         Icons.calendar_month,
-      //         size: size.width / 16,
-      //         color: BrandColors.primaryColor,
-      //       ),
-      //       label: "",
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Container(
-      //         decoration: BoxDecoration(
-      //           borderRadius: BorderRadius.circular(50),
-      //           color: BrandColors.primaryColor,
-      //         ),
-      //         padding: const EdgeInsets.all(6),
-      //         child: Icon(
-      //           Icons.add,
-      //           size: size.width / 16,
-      //           color: Colors.white,
-      //         ),
-      //       ),
-      //       activeIcon: Container(
-      //         decoration: BoxDecoration(
-      //           borderRadius: BorderRadius.circular(50),
-      //           color: BrandColors.primaryColor,
-      //         ),
-      //         padding: const EdgeInsets.all(6),
-      //         child: Icon(
-      //           Icons.add,
-      //           size: size.width / 16,
-      //           color: Colors.white,
-      //         ),
-      //       ),
-      //       label: "",
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(
-      //         Icons.card_membership,
-      //         size: size.width / 16,
-      //         color: BrandColors.greyColor1,
-      //       ),
-      //       activeIcon: Icon(
-      //         Icons.card_membership,
-      //         size: size.width / 16,
-      //         color: BrandColors.primaryColor,
-      //       ),
-      //       label: "",
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(
-      //         Icons.chat,
-      //         size: size.width / 16,
-      //         color: BrandColors.greyColor1,
-      //       ),
-      //       activeIcon: Icon(
-      //         Icons.chat,
-      //         size: size.width / 16,
-      //         color: BrandColors.primaryColor,
-      //       ),
-      //       label: "",
-      //     ),
-      //   ],
-      // ),
       bottomNavigationBar: BottomAppBar(
         notchMargin: 10,
         color: const Color.fromRGBO(255, 255, 255, 1),
@@ -167,12 +77,12 @@ class _LandingScreenState extends State<LandingScreen> {
                   setState(() {});
                 },
                 child: Container(
-                  padding: EdgeInsets.all(12),
+                  padding: const EdgeInsets.all(12),
                   decoration: BoxDecoration(
                     color: BrandColors.primaryColor,
                     borderRadius: BorderRadius.circular(50),
                   ),
-                  child: Icon(
+                  child: const Icon(
                     Icons.add,
                     color: Colors.white,
                     size: 20,

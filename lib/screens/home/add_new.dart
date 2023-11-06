@@ -12,10 +12,10 @@ class _AddNewScreenState extends State<AddNewScreen> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      body: Container(
+      body: SizedBox(
         width: size.width,
         height: size.height / 1.2,
-        child: Center(
+        child: const Center(
           child: Text('new'),
         ),
       ),

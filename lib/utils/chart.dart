@@ -10,6 +10,7 @@ class Chart extends StatefulWidget {
 }
 
 class _ChartState extends State<Chart> {
+  // gradient used to build chart flow
   List<Color> gradientColors = [
     BrandColors.primaryColor,
     BrandColors.primaryColor1,
@@ -39,18 +40,18 @@ class _ChartState extends State<Chart> {
 
   LineChartData mainData() {
     return LineChartData(
-      gridData: FlGridData(
+      gridData: const FlGridData(
         show: false,
         drawVerticalLine: false,
         horizontalInterval: 1,
         verticalInterval: 1,
       ),
-      titlesData: FlTitlesData(
+      titlesData: const FlTitlesData(
         show: false,
-        rightTitles: const AxisTitles(
+        rightTitles: AxisTitles(
           sideTitles: SideTitles(showTitles: false),
         ),
-        topTitles: const AxisTitles(
+        topTitles: AxisTitles(
           sideTitles: SideTitles(showTitles: false),
         ),
       ),
@@ -63,6 +64,7 @@ class _ChartState extends State<Chart> {
       minY: 0,
       maxY: 5,
       lineBarsData: [
+        // coordinates in chart
         LineChartBarData(
           spots: const [
             FlSpot(0, 3),
@@ -84,9 +86,6 @@ class _ChartState extends State<Chart> {
             FlSpot(8, 3.2),
           ],
           isCurved: true,
-          // gradient: LinearGradient(
-          //   colors: gradientColors,
-          // ),
           color: BrandColors.primaryColor,
           barWidth: 2,
           isStrokeCapRound: true,
